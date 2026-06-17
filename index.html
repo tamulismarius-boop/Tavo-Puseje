@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Tavo Pusėje | Tvarus emocinės savijautos rinkinys</title>
 
   <style>
@@ -50,7 +51,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(251, 250, 247, 0.9);
+      background: rgba(251, 250, 247, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(31, 90, 77, 0.1);
     }
@@ -71,16 +72,13 @@
       font-size: 22px;
     }
 
-    .brand-icon {
-      width: 42px;
-      height: 42px;
-      border: 2px solid var(--green-dark);
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
       border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--green-light);
-      color: var(--green-dark);
-      font-size: 22px;
+      border: 1px solid rgba(31, 90, 77, 0.15);
+      background: white;
     }
 
     nav ul {
@@ -149,6 +147,9 @@
       font-weight: 700;
       transition: 0.2s ease;
       border: 2px solid transparent;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: inherit;
     }
 
     .btn-primary {
@@ -178,50 +179,19 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       border: 1px solid rgba(31, 90, 77, 0.1);
+      text-align: center;
     }
 
-    .logo-preview {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
+    .hero-logo {
+      width: 310px;
+      max-width: 100%;
+      display: block;
       margin: 0 auto 26px;
-      background: linear-gradient(145deg, var(--green-light), var(--beige));
-      display: grid;
-      place-items: center;
-      position: relative;
-      border: 3px solid rgba(31, 90, 77, 0.18);
-    }
-
-    .logo-preview::before {
-      content: "♡";
-      font-size: 86px;
-      color: var(--sand);
-      position: absolute;
-      top: 46px;
-    }
-
-    .logo-preview::after {
-      content: "↻";
-      font-size: 125px;
-      color: var(--green-dark);
-      opacity: 0.55;
-      position: absolute;
-    }
-
-    .leaf {
-      position: absolute;
-      bottom: 44px;
-      right: 44px;
-      width: 56px;
-      height: 34px;
-      background: var(--green);
-      border-radius: 100% 0 100% 0;
-      transform: rotate(-20deg);
+      border-radius: 24px;
     }
 
     .hero-card h2 {
       color: var(--green-dark);
-      text-align: center;
       margin-bottom: 10px;
       font-size: 28px;
       font-family: Georgia, "Times New Roman", serif;
@@ -436,16 +406,16 @@
       border: 1px solid rgba(31, 90, 77, 0.1);
     }
 
+    .price-card h3 {
+      color: var(--green-dark);
+      font-size: 24px;
+    }
+
     .price {
       font-size: 58px;
       font-weight: 800;
       color: var(--green-dark);
       margin: 12px 0;
-    }
-
-    .price small {
-      font-size: 18px;
-      color: var(--muted);
     }
 
     .price-card p {
@@ -461,6 +431,7 @@
       color: #5b4b2b;
       max-width: 860px;
       margin: 0 auto;
+      font-size: 17px;
     }
 
     .order {
@@ -568,13 +539,21 @@
         grid-template-columns: 1fr;
       }
 
-      .logo-preview {
-        width: 210px;
-        height: 210px;
-      }
-
       .price {
         font-size: 44px;
+      }
+
+      .hero-logo {
+        width: 240px;
+      }
+
+      .brand {
+        font-size: 19px;
+      }
+
+      .brand-logo {
+        width: 40px;
+        height: 40px;
       }
     }
   </style>
@@ -584,7 +563,7 @@
   <header>
     <div class="container nav">
       <a href="#" class="brand">
-        <span class="brand-icon">♡</span>
+        <img src="logo.png" alt="Tavo Pusėje logo" class="brand-logo" />
         <span>Tavo Pusėje</span>
       </a>
 
@@ -605,7 +584,9 @@
       <div class="container hero-grid">
         <div>
           <div class="badge">Tvarus emocinės savijautos rinkinys jaunimui</div>
+
           <h1>Kai sunku suprasti save — mes tavo pusėje.</h1>
+
           <p>
             „Tavo Pusėje“ – tai savipagalbos rinkinys, padedantis jaunimui geriau
             suprasti savo emocijas, sumažinti stresą ir atrasti ramesnį santykį su savimi.
@@ -618,10 +599,10 @@
         </div>
 
         <div class="hero-card">
-          <div class="logo-preview">
-            <span class="leaf"></span>
-          </div>
+          <img src="logo.png" alt="Tavo Pusėje logo" class="hero-logo" />
+
           <h2>Tavo Pusėje</h2>
+
           <p>
             Emocinė gerovė, tvarumas ir žiedinė ekonomika viename produkte.
           </p>
@@ -783,22 +764,30 @@
         <div class="steps">
           <div class="step">
             <h3>Atsidarai rinkinį</h3>
-            <p>Pasirenki dienoraštį, kortelę arba dėlionę pagal tai, ko šiuo metu reikia.</p>
+            <p>
+              Pasirenki dienoraštį, kortelę arba dėlionę pagal tai, ko šiuo metu reikia.
+            </p>
           </div>
 
           <div class="step">
             <h3>Atsakai į klausimus</h3>
-            <p>Trumpai užrašai, kaip jautiesi, kas tave vargina ir kas galėtų padėti.</p>
+            <p>
+              Trumpai užrašai, kaip jautiesi, kas tave vargina ir kas galėtų padėti.
+            </p>
           </div>
 
           <div class="step">
             <h3>Nuskenuoji QR kodą</h3>
-            <p>Patenki į puslapį su pratimais, kvėpavimo technikomis ir savijautos patikra.</p>
+            <p>
+              Patenki į puslapį su pratimais, kvėpavimo technikomis ir savijautos patikra.
+            </p>
           </div>
 
           <div class="step">
             <h3>Žinai, ką daryti toliau</h3>
-            <p>Jei sunku, rinkinys primena, kada verta kreiptis pagalbos į žmogų ar organizaciją.</p>
+            <p>
+              Jei sunku, rinkinys primena, kada verta kreiptis pagalbos į žmogų ar organizaciją.
+            </p>
           </div>
         </div>
       </div>
@@ -958,9 +947,9 @@
       );
 
       /*
-        Pakeisk šį el. paštą į savo:
+        Čia pakeisk el. paštą į savo:
       */
-      window.location.href = "titas.tamulis@gmail.com?subject=" + subject + "&body=" + body;
+      window.location.href = "mailto:tavopuseje@example.com?subject=" + subject + "&body=" + body;
     });
   </script>
 </body>
